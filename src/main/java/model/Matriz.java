@@ -1,3 +1,5 @@
+package model;
+
 public class Matriz {
 
     String documento;
