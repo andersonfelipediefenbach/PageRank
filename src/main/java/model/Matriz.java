@@ -3,7 +3,7 @@ package model;
 public class Matriz {
 
     String documento;
-    String linha;
+    String coluna;
     Integer valor;
 
     public String getDocumento() {
@@ -22,20 +22,19 @@ public class Matriz {
         this.valor = valor;
     }
 
-    public Matriz(String documento,String linha, Integer valor) {
+    public Matriz(String documento, String coluna, Integer valor) {
         this.documento = documento;
-        this.linha = linha;
+        this.coluna = coluna;
         this.valor = valor;
     }
 
 
-
-    public String getLinha() {
-        return linha;
+    public String getColuna() {
+        return coluna;
     }
 
-    public void setLinha(String linha) {
-        this.linha = linha;
+    public void setColuna(String coluna) {
+        this.coluna = coluna;
     }
 
 }

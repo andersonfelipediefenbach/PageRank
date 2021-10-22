@@ -10,7 +10,7 @@ public class PageRankRI {
     private static Map<String, Matriz> mat = new LinkedHashMap<String, Matriz>();
     private static Map<Integer, String> nodos = new LinkedHashMap<Integer, String>();
 
-    //Parâmetro de teleport
+    //Parâmetro de teleport e qtde iteração
     private static double teleport = 0.1;
     private static int iterationStep = 1;
 
@@ -31,7 +31,7 @@ public class PageRankRI {
                 List<String> collect = mat.entrySet().stream()
                         .filter(
                                 x -> !x.getValue().getDocumento().equals(nomeNodo)// x.getValue().getDocumento() != finalI
-                                        && x.getValue().getLinha().equals(nomeNodo)//x.getValue().getLinha() == finalI
+                                        && x.getValue().getColuna().equals(nomeNodo)//x.getValue().getLinha() == finalI
                                         && x.getValue().getValor() == 1
                         )
                         .map(x -> x.getValue().getDocumento()).collect(Collectors.toList());
@@ -93,7 +93,7 @@ public class PageRankRI {
             String coluna = "";
             for (Map.Entry<String, Matriz> entry2 : mat.entrySet()) {
                 if (entry.getKey().equals(entry2.getValue().getDocumento())) {
-                    coluna = coluna + " | " + entry2.getValue().getLinha() + ":" + entry2.getValue().getValor() + " | ";
+                    coluna = coluna + " | " + entry2.getValue().getColuna() + ":" + entry2.getValue().getValor() + " | ";
                 }
             }
             System.out.println("| Documento:" + entry.getKey() + "   " + coluna);
